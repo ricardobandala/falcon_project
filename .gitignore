@@ -1,0 +1,6 @@
+*.pyc
+.idea/
+/venv/Lib
+/venv/Scripts
+/venv/pip-selfcheck.json
+/venv/pyvenv.cfg
