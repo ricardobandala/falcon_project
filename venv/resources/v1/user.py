@@ -3,7 +3,7 @@ import falcon
 from models.user import UserModel, UserSchema
 
 
-class Wala:
+class Item:
 
     def on_get(self, req, resp, user_id):
         query = req.context['session'].query(UserModel)

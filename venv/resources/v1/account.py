@@ -3,7 +3,7 @@ import falcon
 from models.account import AccountModel, AccountSchema
 
 
-class AccountItem:
+class Item:
 
     def on_get(self, req, resp, account_id):
         query = req.context['session'].query(AccountModel)
