@@ -8,6 +8,7 @@ from base import base_model
 class UserModel(base_model):
 
     __tablename__ = 'user'
+    __table_args__ = {'extend_existing': True}
     id = Column(Integer, primary_key=True, autoincrement=True)
 
     username = Column(String(255), nullable=True, unique=True)

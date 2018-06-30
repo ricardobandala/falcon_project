@@ -9,6 +9,7 @@ from time_block import TimeBlockSchema
 class WorkdayModel(base_model):
 
     __tablename__ = 'workday'
+    __table_args__ = {'extend_existing': True}
     id = Column(Integer, primary_key=True, autoincrement=True, unique=True)
     # workday_id_user_id = ForeignKeyConstraint(
     # ['user_id', 'workday_id'],

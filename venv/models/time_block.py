@@ -3,13 +3,14 @@ from marshmallow import Schema, fields, post_load
 from sqlalchemy import Column, DateTime, ForeignKey, Integer, String
 from base import base_model
 from user import UserSchema
-from workday import WorkdaySchema
+# from workday import WorkdaySchema
 from work_category import WorkCategorySchema
 
 
 class TimeBlockModel(base_model):
 
     __tablename__ = 'time_block'
+    __table_args__ = {'extend_existing': True}
     id = Column(Integer, primary_key=True, autoincrement=True)
 
     user_id = Column(Integer, ForeignKey('user.id'), nullable=False)
@@ -32,7 +33,7 @@ class TimeBlockSchema(Schema):
     id = fields.Integer()
 
     user = fields.Nested(UserSchema)
-    workday = fields.Nested(WorkdaySchema)
+    # workday = fields.Nested(WorkdaySchema)
     work_category = fields.Nested(WorkCategorySchema)
 
     time_length = fields.DateTime()

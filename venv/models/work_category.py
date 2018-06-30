@@ -7,6 +7,7 @@ from base import base_model
 class WorkCategoryModel(base_model):
 
     __tablename__ = 'work_category'
+    __table_args__ = {'extend_existing': True}
     id = Column(Integer, primary_key=True, autoincrement=True, unique=True)
 
     name = Column(String(255), nullable=False, unique=True)
