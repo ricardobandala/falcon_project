@@ -24,10 +24,11 @@ class UserSchema(Schema, TableTimeStampSchema):
 
     id = fields.Integer()
 
-    user_name = fields.String()
+    username = fields.String()
     password = fields.String()
     is_active = fields.Boolean()
 
-    # @post_load
-    # def create_model(self, _model, data):
-    #     return UserModel(**data)
+
+    @post_load
+    def create_model(self, _model, data):
+        return UserModel(**data)

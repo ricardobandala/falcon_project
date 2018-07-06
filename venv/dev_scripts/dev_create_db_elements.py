@@ -25,12 +25,13 @@ if __name__ == '__main__':
         is_active=True
     )
 
-    user1 = user.UserModel(
-        username='john_lennon',
-        password='imagine',
-        is_active=False
+    userprofile0 = user_profile.UserProfileModel(
+        first_name="Ricardo",
+        last_name="Bandala",
+        user_id=10
     )
     session.add(user0)
+    session.add(userprofile0)
     # session.add(user1)
     session.commit()
     session.close()

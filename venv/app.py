@@ -21,9 +21,9 @@ class App(falcon.API):
         self.add_route('/v1/user', user_item_resource)
         self.add_route('/v1/user/{user_id:int}', user_item_resource)
 
-        account_item_resource = v1.account.Item()
-        self.add_route('/v1/account', account_item_resource)
-        self.add_route('/v1/account/{account_id:int}', account_item_resource)
+        # account_item_resource = v1.account.Item()
+        # self.add_route('/v1/account', account_item_resource)
+        # self.add_route('/v1/account/{account_id:int}', account_item_resource)
 
         # self.add_route('/v1/user', v1.user.Collection())
         # self.add_route('/v1/user', v1.user.Collection())

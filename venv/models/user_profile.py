@@ -12,6 +12,7 @@ class UserProfileModel(base_model):
 
     first_name = Column(String(255), nullable=False)
     last_name = Column(String(255), nullable=False)
+    email = Column(String(255))
     user_id = Column(Integer, ForeignKey('user.id'))
     # application_id = Column(Integer, ForeignKey('application.id'), nullable=False)
     FKC_user_id = ForeignKeyConstraint(['id'], ['user_profile.id'], name='fk_user_&_user_profile')
@@ -27,7 +28,7 @@ class UserProfileSchema(Schema, TableTimeStampSchema):
 
     first_name = fields.String()
     last_name = fields.String()
-    # user = fields.Nested('UserSchema')
+    user = fields.Nested('UserSchema')
     # application = fields.Nested(ApplicationSchema)
 
     @post_load
