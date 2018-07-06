@@ -12,7 +12,7 @@ class UserModel(base_model):
 
     username = Column(String(255), nullable=True, unique=True)
     password = Column(String(255), nullable=False)
-    is_active = Column(Boolean(255), nullable=False)
+    is_active = Column(Boolean, nullable=False)
     user_profile = relationship('UserProfileModel', backref='user')
 
     created = Column(DateTime, default=datetime.datetime.now)
@@ -28,6 +28,6 @@ class UserSchema(Schema, TableTimeStampSchema):
     password = fields.String()
     is_active = fields.Boolean()
 
-    @post_load
-    def create_model(self, _model, data):
-        return UserModel(**data)
+    # @post_load
+    # def create_model(self, _model, data):
+    #     return UserModel(**data)

@@ -3,9 +3,9 @@ from marshmallow import Schema, fields, post_load
 from sqlalchemy import Column, DateTime, ForeignKey, Integer
 from sqlalchemy.orm import relationship
 from base import base_model, TableTimeStampSchema
-from user import UserSchema
+# from user import UserSchema
 # from workday import WorkdaySchema
-from work_category import WorkCategorySchema
+# from work_category import WorkCategorySchema
 
 
 class TimeBlockModel(base_model):
@@ -33,7 +33,7 @@ class TimeBlockSchema(Schema, TableTimeStampSchema):
 
     id = fields.Integer()
 
-    user = fields.Nested(UserSchema)
+    # user = fields.Nested(UserSchema)
     # workday = fields.Nested(WorkdaySchema)
     # work_category = fields.Nested(WorkCategorySchema)
 

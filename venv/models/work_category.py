@@ -1,7 +1,7 @@
 import datetime
 from marshmallow import Schema, fields, post_load
 from sqlalchemy import Column, DateTime, Integer, String
-from base import base_model
+from base import base_model, TableTimeStampSchema
 
 
 class WorkCategoryModel(base_model):
