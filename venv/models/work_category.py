@@ -18,16 +18,12 @@ class WorkCategoryModel(base_model):
     deleted = Column(DateTime)
 
 
-class WorkCategorySchema(Schema):
+class WorkCategorySchema(Schema, TableTimeStampSchema):
 
     id = fields.Integer()
 
     name = fields.String()
     description = fields.String()
-
-    created = fields.DateTime(dump_only=True)
-    modified = fields.DateTime(dump_only=True)
-    deleted = fields.DateTime(dump_only=True)
 
     @post_load
     def create_model(self, _model, data):

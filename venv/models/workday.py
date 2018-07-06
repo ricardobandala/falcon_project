@@ -20,21 +20,21 @@ class WorkdayModel(base_model):
     user_id = Column(Integer, ForeignKey('user.id'), nullable=False)
     start_time = Column(DateTime, default=datetime.datetime.now, nullable=False)
     stop_time = Column(DateTime)
-    time_block = relationship('TimeBlockModel')
+    time_blocks = relationship('TimeBlockModel', backref="workday")
 
     created = Column(DateTime, default=datetime.datetime.now)
     modified = Column(DateTime, onupdate=datetime.datetime.now)
     deleted = Column(DateTime)
 
 
-class WorkdaySchema(Schema):
+class WorkdaySchema(Schema, TableTimeStampSchema):
 
     id = fields.Integer()
 
     user_id = fields.Integer()
     start_time = fields.DateTime()
     stop_time = fields.DateTime()
-    time_block = fields.Nested(TimeBlockSchema, many=True)
+    # time_block = fields.Nested(TimeBlockSchema, many=True)
 
     created = fields.DateTime(dump_only=True)
     modified = fields.DateTime(dump_only=True)
